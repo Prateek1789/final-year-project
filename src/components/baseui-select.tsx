@@ -1,13 +1,13 @@
 import { Select } from "@base-ui/react";
 
-const BaseUISelect = () => {
-  const frameworks = [
-    {label: "React", value: "react"},
-    {label: "Vue", value: "vue"},
-    {label: "Angular", value: "angular"},
-    {label: "Svelte", value: "svelte"},
-  ];
+const frameworks = [
+  {label: "React", value: "react"},
+  {label: "Vue", value: "vue"},
+  {label: "Angular", value: "angular"},
+  {label: "Svelte", value: "svelte"},
+];
 
+const BaseUISelect = () => {
   return (
     <div>
       <Select.Root items={frameworks}>
