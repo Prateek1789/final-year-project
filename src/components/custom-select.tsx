@@ -64,7 +64,6 @@ const CustomSelect = () => {
         setSelectOpen(false);
       }
     };
-
     document.addEventListener("mousedown", handleOutsideClick);
 
     return () => document.removeEventListener("mousedown", handleOutsideClick);
@@ -78,7 +77,7 @@ const CustomSelect = () => {
     >
       <label
         id="select-label" 
-        className="text-black"
+        className="text-black dark:text-white"
       >
         Fronted Frameworks
       </label>
@@ -90,7 +89,7 @@ const CustomSelect = () => {
         aria-labelledby="select-label select-trigger"
         id="select-trigger" 
         onClick={() => setSelectOpen(!isSelectOpen)}
-        className="w-50 bg-white text-neutral-600 text-left text-sm hover:text-neutral-900 hover:border-blue-300 p-2 rounded-md border border-neutral-200 cursor-pointer transition-all duration-200" 
+        className="w-50 bg-white dark:bg-neutral-800 text-neutral-600 dark:text-neutral-100 text-left text-sm hover:text-neutral-900 dark:hover:text-white p-2 rounded-md border border-neutral-200 dark:border-neutral-700 cursor-pointer transition-all duration-200" 
       >
         {selectedOption || "Select Framework"}
       </button>
@@ -98,8 +97,8 @@ const CustomSelect = () => {
         <ul
           role="listbox"
           tabIndex={-1}
-          aria-activedescendant=""
-          className="absolute top-[110%] left-0 w-full z-10 p-1 bg-white shadow-lg rounded-md border border-neutral-200"
+          aria-activedescendant={activeIndex >= 0 ? frameworks[activeIndex].id : undefined}
+          className="absolute top-[110%] left-0 w-full z-10 p-1 bg-white dark:bg-neutral-800 shadow-lg rounded-md border border-neutral-200 dark:border-neutral-700"
         >
           {frameworks.map((option, idx) => (
             <li 
@@ -108,7 +107,7 @@ const CustomSelect = () => {
               role="option"
               aria-selected={selectedOption === option.label} 
               onClick={() => handleSelect(option.label)}
-              className={`p-2 hover:bg-neutral-100 border border-transparent hover:border-neutral-200 ${activeIndex === idx && "bg-neutral-100"} cursor-pointer rounded-md text-black text-left text-sm`}
+              className={`p-2 rounded-sm border border-transparent ${selectedOption === option.label ? "bg-neutral-100 dark:bg-neutral-700 border-neutral-200 dark:border-neutral-600" : ""} ${activeIndex === idx ? "bg-neutral-100 dark:bg-neutral-700 border-blue-400 dark:border-neutral-600" : ""} hover:bg-neutral-100 dark:hover:bg-neutral-700 hover:border-neutral-200 dark:hover:border-neutral-600 text-black dark:text-white text-left text-sm`}
             >
               {option.label}
             </li>
