@@ -1,12 +1,13 @@
 import { useState, useEffect, useRef, type KeyboardEvent } from "react";
 
+const frameworks = [
+  {id: "opt-1", label: "React"},
+  {id: "opt-2", label: "Vue"},
+  {id: "opt-3", label: "Angular"},
+  {id: "opt-4", label: "Svelte"},
+];
+
 const CustomSelect = () => {
-  const frameworks = [
-    {id: "opt-1", label: "React"},
-    {id: "opt-2", label: "Vue"},
-    {id: "opt-3", label: "Angular"},
-    {id: "opt-4", label: "Svelte"},
-  ];
   const containerRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
 
