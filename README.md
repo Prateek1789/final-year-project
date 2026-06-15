@@ -49,12 +49,12 @@ To run this controlled sandbox locally and test the keyboard navigation matrices
 **1. Clone the repository:**
 ```bash
 git clone [https://github.com/prateek1789/final-year-project.git](https://github.com/prateek1789/final-year-project.git)
-cd final-year-project 
+cd final-year-project
+``` 
 
-**2. Install the dependencies:**
+**2. Install the dependencies and run dev server:**
 ```bash
-npm install 
+npm install
 
-**3. Start the dev server:**
-```bash
-npm run dev 
+npm run dev  
+```
