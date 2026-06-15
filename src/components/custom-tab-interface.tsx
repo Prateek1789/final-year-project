@@ -52,7 +52,7 @@ const CustomTabInterface = () => {
           return (
             <button
               key={tab.id}
-              ref={(btn) => { tabRefs.current[idx] = btn }}
+              ref={(btn) => { if (btn) tabRefs.current[idx] = btn }}
               role="tab"
               tabIndex={focusIndex === idx ? 0 : -1}
               aria-selected={isActive}
