@@ -61,7 +61,7 @@ const CustomSelect = () => {
   // close the select menu if user clicks outside the component
   useEffect(() => {
     const handleOutsideClick = (e: MouseEvent) => {
-      if (isSelectOpen && !containerRef.current.contains(e.target as Node)) {
+      if (isSelectOpen && !containerRef.current?.contains(e.target as Node)) {
         setSelectOpen(false);
       }
     };
